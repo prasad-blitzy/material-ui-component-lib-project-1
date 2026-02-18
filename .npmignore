@@ -1,0 +1,23 @@
+# Source files
+src/
+
+# Configuration
+*.config.*
+tsconfig*
+.eslintrc*
+.prettierrc
+
+# Development
+node_modules/
+.git/
+.github/
+.vscode/
+.idea/
+
+# Build info
+*.tsbuildinfo
+.eslintcache
+
+# OS
+.DS_Store
+Thumbs.db
