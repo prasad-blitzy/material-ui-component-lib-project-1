@@ -1,0 +1,41 @@
+# =============================================================================
+# .npmignore — npm Publish Exclusion Patterns
+# =============================================================================
+# Controls which files are EXCLUDED when publishing the package to npm.
+# The published package includes ONLY: dist/, package.json, README.md, LICENSE
+# =============================================================================
+
+# -----------------------------------------------------------------------------
+# Source Code
+# -----------------------------------------------------------------------------
+# Consumers use the compiled dist/ output; source files are not needed
+src/
+
+# -----------------------------------------------------------------------------
+# Configuration Files
+# -----------------------------------------------------------------------------
+# Build, lint, and format configs are development-only
+*.config.*
+tsconfig*
+.eslintrc*
+.prettierrc
+
+# -----------------------------------------------------------------------------
+# Development Artifacts
+# -----------------------------------------------------------------------------
+# Installed packages (consumers install their own via peerDependencies)
+node_modules/
+
+# Git configuration
+.gitignore
+
+# Linting and build caches
+.eslintcache
+*.tsbuildinfo
+
+# -----------------------------------------------------------------------------
+# IDE and OS Metadata
+# -----------------------------------------------------------------------------
+.vscode/
+.idea/
+.DS_Store
