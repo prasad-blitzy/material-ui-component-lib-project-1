@@ -17,7 +17,14 @@ import { createCustomTheme } from '../../theme/createCustomTheme';
  * Dark theme instance for the DarkMode story decorator.
  * Uses the library's createCustomTheme factory with dark palette mode.
  */
-const darkTheme = createCustomTheme({ palette: { mode: 'dark' } });
+const darkTheme = createCustomTheme({
+  cssVariables: false,
+  palette: {
+    mode: 'dark',
+    background: { default: '#121212', paper: '#121212' },
+    text: { primary: '#fff', secondary: 'rgba(255, 255, 255, 0.7)' },
+  },
+});
 
 /**
  * Storybook meta configuration for the Dialog component.
