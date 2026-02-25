@@ -9,12 +9,20 @@ import { createCustomTheme } from '../../theme/createCustomTheme';
 // ---------------------------------------------------------------------------
 // Dark Theme Instance
 // ---------------------------------------------------------------------------
-// Pre-built dark theme for the DarkMode story decorator. Uses the library's
-// createCustomTheme factory with dark palette mode so surface and text colors
-// adapt correctly.
+// Pre-built dark theme for the DarkMode story decorator.
+// Uses `cssVariables: false` to bypass MUI v7's CSS variables mode (which
+// requires the `colorSchemes` API for dark mode) and explicit dark-mode
+// background/text values to override the light-mode defaults from colorTokens.
 // ---------------------------------------------------------------------------
 
-const darkTheme = createCustomTheme({ palette: { mode: 'dark' } });
+const darkTheme = createCustomTheme({
+  cssVariables: false,
+  palette: {
+    mode: 'dark',
+    background: { default: '#121212', paper: '#121212' },
+    text: { primary: '#fff', secondary: 'rgba(255, 255, 255, 0.7)' },
+  },
+});
 
 // ---------------------------------------------------------------------------
 // Meta Configuration
