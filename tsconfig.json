@@ -22,6 +22,6 @@
     "baseUrl": ".",
     "resolveJsonModule": true
   },
-  "include": ["src", ".storybook"],
+  "include": ["src", ".storybook/*"],
   "exclude": ["node_modules", "dist"]
 }
