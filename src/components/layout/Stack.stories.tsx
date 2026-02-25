@@ -8,10 +8,17 @@ import { createCustomTheme } from '../../theme/createCustomTheme';
 
 /**
  * Dark theme instance created via the library's theme factory for use in the
- * DarkMode story decorator. Uses the standard dark palette mode which inverts
- * background and text colors across all MUI semantic tokens.
+ * DarkMode story decorator. Uses explicit dark palette overrides with cssVariables disabled to
+ * bypass the CSS variable scope conflict for proper dark mode rendering.
  */
-const darkTheme = createCustomTheme({ palette: { mode: 'dark' } });
+const darkTheme = createCustomTheme({
+  palette: {
+    mode: 'dark',
+    background: { default: '#121212', paper: '#121212' },
+    text: { primary: '#fff', secondary: 'rgba(255, 255, 255, 0.7)' },
+  },
+  cssVariables: false,
+});
 
 /**
  * Storybook meta configuration for the Stack layout component.

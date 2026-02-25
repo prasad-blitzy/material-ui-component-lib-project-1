@@ -6,11 +6,21 @@ import { createCustomTheme } from '../../theme/createCustomTheme';
 
 /**
  * Dark theme instance used by the DarkMode story decorator.
- * Created via the library's createCustomTheme factory with dark palette mode,
- * which inverts background and text colors across all MUI semantic tokens.
+ * Created via the library's createCustomTheme factory with dark color scheme
+ * with explicit dark palette values and cssVariables disabled.
+ * Since the library's default theme uses cssVariables: true, this override
+ * ensures the nested ThemeProvider uses traditional Emotion-based theming
+ * with dark background (#121212) and light text (#fff) values.
  * Defined at module level to avoid re-creation on each render.
  */
-const darkTheme = createCustomTheme({ palette: { mode: 'dark' } });
+const darkTheme = createCustomTheme({
+  palette: {
+    mode: 'dark',
+    background: { default: '#121212', paper: '#121212' },
+    text: { primary: '#fff', secondary: 'rgba(255, 255, 255, 0.7)' },
+  },
+  cssVariables: false,
+});
 
 /**
  * Storybook meta configuration for the Box layout component.

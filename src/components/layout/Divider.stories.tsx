@@ -7,10 +7,18 @@ import { ThemeProvider } from '../../theme/ThemeProvider';
 import { createCustomTheme } from '../../theme/createCustomTheme';
 
 /**
- * Dark theme instance for DarkMode story decorator.
+ * Dark theme instance for DarkMode story decorator with explicit dark palette values
+ * and cssVariables disabled for proper dark mode rendering.
  * Created once at module scope to avoid re-creation on every render.
  */
-const darkTheme = createCustomTheme({ palette: { mode: 'dark' } });
+const darkTheme = createCustomTheme({
+  palette: {
+    mode: 'dark',
+    background: { default: '#121212', paper: '#121212' },
+    text: { primary: '#fff', secondary: 'rgba(255, 255, 255, 0.7)' },
+  },
+  cssVariables: false,
+});
 
 /**
  * Storybook meta configuration for the Divider layout component.

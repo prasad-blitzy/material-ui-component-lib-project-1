@@ -8,10 +8,19 @@ import { createCustomTheme } from '../../theme/createCustomTheme';
 
 /**
  * Pre-built dark theme instance for DarkMode story decorator.
- * Uses the library's createCustomTheme factory with dark palette mode
- * to demonstrate Button rendering under the dark color scheme.
+ * Uses the library's createCustomTheme factory with dark color scheme and
+ * explicit dark palette overrides and cssVariables disabled, bypassing
+ * the CSS variable scope conflict to demonstrate Button rendering under
+ * the dark color scheme with correct dark background and light text.
  */
-const darkTheme = createCustomTheme({ palette: { mode: 'dark' } });
+const darkTheme = createCustomTheme({
+  palette: {
+    mode: 'dark',
+    background: { default: '#121212', paper: '#121212' },
+    text: { primary: '#fff', secondary: 'rgba(255, 255, 255, 0.7)' },
+  },
+  cssVariables: false,
+});
 
 /**
  * Storybook metadata configuration for the Button component.

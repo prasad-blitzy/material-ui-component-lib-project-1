@@ -7,10 +7,18 @@ import { createCustomTheme } from '../../theme/createCustomTheme';
 
 /**
  * Dark theme instance used by the DarkMode story decorator.
- * Created via the library's createCustomTheme factory with dark palette mode.
+ * Created via the library's createCustomTheme factory with explicit dark palette overrides and cssVariables disabled,
+ * bypassing the CSS variable scope conflict for proper dark mode rendering.
  * Defined at module level to avoid re-creation on each render.
  */
-const darkTheme = createCustomTheme({ palette: { mode: 'dark' } });
+const darkTheme = createCustomTheme({
+  palette: {
+    mode: 'dark',
+    background: { default: '#121212', paper: '#121212' },
+    text: { primary: '#fff', secondary: 'rgba(255, 255, 255, 0.7)' },
+  },
+  cssVariables: false,
+});
 
 /**
  * Storybook meta configuration for the Paper layout component.

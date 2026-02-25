@@ -7,10 +7,18 @@ import { createCustomTheme } from '../../theme/createCustomTheme';
 
 /**
  * Dark theme instance used by the DarkMode story to demonstrate Container
- * rendering under a dark palette. Created once and shared across dark mode
- * story decorators to avoid unnecessary theme re-creation.
+ * rendering under a dark color scheme. Uses explicit dark palette values with cssVariables disabled to
+ * bypass the CSS variable scope conflict. Created once and shared across
+ * dark mode story decorators.
  */
-const darkTheme = createCustomTheme({ palette: { mode: 'dark' } });
+const darkTheme = createCustomTheme({
+  palette: {
+    mode: 'dark',
+    background: { default: '#121212', paper: '#121212' },
+    text: { primary: '#fff', secondary: 'rgba(255, 255, 255, 0.7)' },
+  },
+  cssVariables: false,
+});
 
 const meta = {
   title: 'Layout/Container',
