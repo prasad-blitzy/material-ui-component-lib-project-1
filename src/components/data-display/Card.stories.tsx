@@ -71,7 +71,7 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   args: {},
   render: (args) => (
-    <Card {...args} sx={{ maxWidth: 345 }}>
+    <Card {...args} sx={(theme) => ({ maxWidth: theme.spacing(43) })}>
       <CardHeader title="Card Title" subheader="Card Subtitle" />
       <CardContent>
         <Typography variant="body2" color="text.secondary">
@@ -96,7 +96,7 @@ export const Default: Story = {
 
 export const WithMedia: Story = {
   render: () => (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={(theme) => ({ maxWidth: theme.spacing(43) })}>
       <CardMedia
         component="div"
         sx={{
@@ -139,7 +139,7 @@ export const Raised: Story = {
   args: { raised: true },
   render: (args) => (
     <Stack direction="row" spacing={2} alignItems="center">
-      <Card sx={{ maxWidth: 345 }}>
+      <Card sx={(theme) => ({ maxWidth: theme.spacing(43) })}>
         <CardContent>
           <Typography variant="h6" gutterBottom>
             Default Card
@@ -149,7 +149,7 @@ export const Raised: Story = {
           </Typography>
         </CardContent>
       </Card>
-      <Card {...args} sx={{ maxWidth: 345 }}>
+      <Card {...args} sx={(theme) => ({ maxWidth: theme.spacing(43) })}>
         <CardContent>
           <Typography variant="h6" gutterBottom>
             Raised Card
@@ -178,7 +178,7 @@ export const OutlinedVariant: Story = {
   args: { variant: 'outlined' },
   render: (args) => (
     <Stack direction="row" spacing={2} alignItems="center">
-      <Card sx={{ maxWidth: 345 }}>
+      <Card sx={(theme) => ({ maxWidth: theme.spacing(43) })}>
         <CardContent>
           <Typography variant="h6" gutterBottom>
             Elevation Card
@@ -188,7 +188,7 @@ export const OutlinedVariant: Story = {
           </Typography>
         </CardContent>
       </Card>
-      <Card {...args} sx={{ maxWidth: 345 }}>
+      <Card {...args} sx={(theme) => ({ maxWidth: theme.spacing(43) })}>
         <CardContent>
           <Typography variant="h6" gutterBottom>
             Outlined Card
@@ -224,7 +224,7 @@ export const DarkMode: Story = {
     ),
   ],
   render: () => (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={(theme) => ({ maxWidth: theme.spacing(43) })}>
       <CardHeader
         title="Dark Mode Card"
         subheader="Themed for dark backgrounds"
@@ -274,7 +274,7 @@ export const DarkMode: Story = {
 
 export const FullExample: Story = {
   render: () => (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={(theme) => ({ maxWidth: theme.spacing(43) })}>
       <CardHeader
         title="Premium Headphones"
         subheader="Electronics • Audio"

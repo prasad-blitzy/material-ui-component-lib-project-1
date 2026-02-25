@@ -277,7 +277,7 @@ export const FullExample: Story = {
 export const StickyHeader: Story = {
   args: { stickyHeader: true },
   render: (args) => (
-    <Paper sx={{ width: '100%', maxHeight: 200, overflow: 'auto' }}>
+    <Paper sx={(theme) => ({ width: '100%', maxHeight: theme.spacing(25), overflow: 'auto' })}>
       <Table {...args}>
         <TableHead>
           <TableRow>

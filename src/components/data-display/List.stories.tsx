@@ -15,17 +15,9 @@ import { createCustomTheme } from '../../theme/createCustomTheme';
 
 /**
  * Dark theme instance used by the DarkMode story decorator.
- * Created via the library's createCustomTheme factory with dark palette mode
- * and cssVariables disabled for reliable dark mode rendering in Storybook.
+ * Created via the library's createCustomTheme factory with dark palette mode.
  */
-const darkTheme = createCustomTheme({
-  cssVariables: false,
-  palette: {
-    mode: 'dark',
-    background: { default: '#121212', paper: '#121212' },
-    text: { primary: '#fff', secondary: 'rgba(255, 255, 255, 0.7)' },
-  },
-});
+const darkTheme = createCustomTheme({ palette: { mode: 'dark' } });
 
 /**
  * Storybook meta configuration for the List data-display compound component.
@@ -79,7 +71,7 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   args: {},
   render: (args) => (
-    <Paper sx={{ width: '100%', maxWidth: 360 }}>
+    <Paper sx={(theme) => ({ width: '100%', maxWidth: theme.spacing(45) })}>
       <List {...args}>
         <ListItem>
           <ListItemText primary="List Item 1" />
@@ -109,7 +101,7 @@ export const Default: Story = {
  */
 export const WithIcons: Story = {
   render: () => (
-    <Paper sx={{ width: '100%', maxWidth: 360 }}>
+    <Paper sx={(theme) => ({ width: '100%', maxWidth: theme.spacing(45) })}>
       <List>
         <ListItem>
           <ListItemIcon>📥</ListItemIcon>
@@ -141,7 +133,7 @@ export const WithIcons: Story = {
  */
 export const WithSecondaryText: Story = {
   render: () => (
-    <Paper sx={{ width: '100%', maxWidth: 360 }}>
+    <Paper sx={(theme) => ({ width: '100%', maxWidth: theme.spacing(45) })}>
       <List>
         <ListItem>
           <ListItemText primary="Inbox" secondary="5 new messages" />
@@ -171,7 +163,7 @@ export const WithSecondaryText: Story = {
  */
 export const Interactive: Story = {
   render: () => (
-    <Paper sx={{ width: '100%', maxWidth: 360 }}>
+    <Paper sx={(theme) => ({ width: '100%', maxWidth: theme.spacing(45) })}>
       <List>
         <ListItem disablePadding>
           <ListItemButton onClick={fn()}>
@@ -218,7 +210,7 @@ export const DarkMode: Story = {
     ),
   ],
   render: () => (
-    <Paper sx={{ width: '100%', maxWidth: 360 }}>
+    <Paper sx={(theme) => ({ width: '100%', maxWidth: theme.spacing(45) })}>
       <List>
         <ListItem>
           <ListItemIcon>📥</ListItemIcon>
@@ -252,7 +244,7 @@ export const DarkMode: Story = {
  */
 export const FullExample: Story = {
   render: () => (
-    <Paper sx={{ width: '100%', maxWidth: 360 }}>
+    <Paper sx={(theme) => ({ width: '100%', maxWidth: theme.spacing(45) })}>
       <List>
         <ListItem disablePadding>
           <ListItemButton onClick={fn()}>
@@ -324,7 +316,7 @@ export const FullExample: Story = {
 export const Dense: Story = {
   args: { dense: true },
   render: (args) => (
-    <Paper sx={{ width: '100%', maxWidth: 360 }}>
+    <Paper sx={(theme) => ({ width: '100%', maxWidth: theme.spacing(45) })}>
       <List {...args}>
         <ListItem>
           <ListItemText primary="Dense Item 1" />

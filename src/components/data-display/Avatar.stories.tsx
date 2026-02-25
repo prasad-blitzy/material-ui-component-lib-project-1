@@ -8,18 +8,10 @@ import { createCustomTheme } from '../../theme/createCustomTheme';
 
 /**
  * Dark theme instance used by the DarkMode story decorator.
- * Created via the library's createCustomTheme factory with dark palette mode
- * and explicit background/text colors for reliable dark rendering.
+ * Created via the library's createCustomTheme factory with dark palette mode.
  * Defined at module level to avoid re-creation on each render.
  */
-const darkTheme = createCustomTheme({
-  cssVariables: false,
-  palette: {
-    mode: 'dark',
-    background: { default: '#121212', paper: '#121212' },
-    text: { primary: '#fff', secondary: 'rgba(255, 255, 255, 0.7)' },
-  },
-});
+const darkTheme = createCustomTheme({ palette: { mode: 'dark' } });
 
 /**
  * Storybook meta configuration for the Avatar data-display component.
@@ -167,10 +159,10 @@ export const Variants: Story = {
 export const Sizes: Story = {
   render: () => (
     <Stack direction="row" spacing={2} alignItems="center">
-      <Avatar sx={{ width: 24, height: 24, fontSize: '0.75rem' }}>S</Avatar>
+      <Avatar sx={{ width: 24, height: 24 }}>S</Avatar>
       <Avatar sx={{ width: 40, height: 40 }}>M</Avatar>
       <Avatar sx={{ width: 56, height: 56 }}>L</Avatar>
-      <Avatar sx={{ width: 80, height: 80, fontSize: '2rem' }}>XL</Avatar>
+      <Avatar sx={{ width: 80, height: 80 }}>XL</Avatar>
     </Stack>
   ),
   parameters: {

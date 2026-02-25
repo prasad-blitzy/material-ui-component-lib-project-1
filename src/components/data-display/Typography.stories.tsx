@@ -7,18 +7,10 @@ import { createCustomTheme } from '../../theme/createCustomTheme';
 
 /**
  * Dark theme instance used by the DarkMode story decorator.
- * Created via the library's createCustomTheme factory with dark palette mode
- * and explicit background/text colors for reliable dark rendering.
+ * Created via the library's createCustomTheme factory with dark palette mode.
  * Defined at module level to avoid re-creation on each render.
  */
-const darkTheme = createCustomTheme({
-  cssVariables: false,
-  palette: {
-    mode: 'dark',
-    background: { default: '#121212', paper: '#121212' },
-    text: { primary: '#fff', secondary: 'rgba(255, 255, 255, 0.7)' },
-  },
-});
+const darkTheme = createCustomTheme({ palette: { mode: 'dark' } });
 
 /**
  * Storybook meta configuration for the Typography data-display component.
@@ -209,7 +201,7 @@ export const Colors: Story = {
  */
 export const Alignment: Story = {
   render: () => (
-    <Stack spacing={1} sx={{ width: '100%', maxWidth: 600 }}>
+    <Stack spacing={1} sx={{ width: '100%', maxWidth: 'sm' }}>
       {(['left', 'center', 'right', 'justify'] as const).map((align) => (
         <Typography key={align} variant="body1" align={align}>
           Aligned {align} text content
@@ -282,7 +274,7 @@ export const DarkMode: Story = {
  */
 export const FullExample: Story = {
   render: () => (
-    <Stack spacing={2} sx={{ maxWidth: 600 }}>
+    <Stack spacing={2} sx={{ maxWidth: 'sm' }}>
       <Typography variant="h3">Article Title</Typography>
       <Typography variant="subtitle1" color="text.secondary">
         Published on January 15, 2025 by Jane Doe

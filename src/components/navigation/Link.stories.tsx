@@ -27,7 +27,7 @@ const darkTheme = createCustomTheme({ palette: { mode: 'dark' } });
  * generation, wraps every story in the library's ThemeProvider, and maps
  * meaningful Link props to interactive Storybook controls.
  */
-const meta: Meta<typeof Link> = {
+const meta = {
   title: 'Navigation/Link',
   component: Link,
   decorators: [
@@ -94,7 +94,7 @@ const meta: Meta<typeof Link> = {
   args: {
     onClick: fn(),
   },
-};
+} satisfies Meta<typeof Link>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
