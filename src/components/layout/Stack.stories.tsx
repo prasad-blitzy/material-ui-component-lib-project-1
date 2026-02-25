@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Stack } from './Stack';
 import { Box } from './Box';
 import { Divider } from './Divider';
+import { Button } from '../core/Button';
 import { ThemeProvider } from '../../theme/ThemeProvider';
 import { createCustomTheme } from '../../theme/createCustomTheme';
 
@@ -583,32 +584,8 @@ export const FullExample: Story = {
           </Box>
         </Stack>
         <Stack direction="row" spacing={2} justifyContent="flex-end">
-          <Box
-            sx={{
-              px: 3,
-              py: 1,
-              bgcolor: 'grey.300',
-              borderRadius: 1,
-              cursor: 'pointer',
-              textAlign: 'center',
-              color: 'text.primary',
-            }}
-          >
-            Cancel
-          </Box>
-          <Box
-            sx={{
-              px: 3,
-              py: 1,
-              bgcolor: 'primary.main',
-              color: 'primary.contrastText',
-              borderRadius: 1,
-              cursor: 'pointer',
-              textAlign: 'center',
-            }}
-          >
-            Register
-          </Box>
+          <Button variant="text">Cancel</Button>
+          <Button variant="contained">Register</Button>
         </Stack>
       </Stack>
     </Box>

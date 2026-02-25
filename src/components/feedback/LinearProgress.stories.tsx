@@ -9,19 +9,11 @@ import { ThemeProvider } from '../../theme/ThemeProvider';
 import { createCustomTheme } from '../../theme/createCustomTheme';
 
 /**
- * Dark theme instance for the DarkMode story decorator.
- * Uses `cssVariables: false` to bypass MUI v7's CSS variables mode (which
- * requires the `colorSchemes` API for dark mode) and explicit dark-mode
- * background/text values to override the light-mode defaults from colorTokens.
+ * Dark theme instance used by the DarkMode story decorator.
+ * Created via the library's createCustomTheme factory with dark palette mode,
+ * which inverts background and text colors across all MUI semantic tokens.
  */
-const darkTheme = createCustomTheme({
-  cssVariables: false,
-  palette: {
-    mode: 'dark',
-    background: { default: '#121212', paper: '#121212' },
-    text: { primary: '#fff', secondary: 'rgba(255, 255, 255, 0.7)' },
-  },
-});
+const darkTheme = createCustomTheme({ palette: { mode: 'dark' } });
 
 /**
  * Storybook meta configuration for the LinearProgress component.

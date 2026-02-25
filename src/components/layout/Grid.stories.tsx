@@ -353,10 +353,10 @@ export const FullExample: Story = {
           }}
           elevation={2}
         >
-          <Box sx={{ fontWeight: 700, fontSize: '1.125rem' }}>
+          <Box sx={{ fontWeight: 700, typography: 'h6' }}>
             Analytics Dashboard
           </Box>
-          <Box sx={{ fontSize: '0.875rem', mt: 0.5, opacity: 0.9 }}>
+          <Box sx={{ typography: 'body2', mt: 0.5, opacity: 0.9 }}>
             Real-time performance metrics and system overview
           </Box>
         </Paper>
@@ -399,7 +399,7 @@ export const FullExample: Story = {
           <Box sx={{ fontWeight: 600, mb: 1, color: 'text.primary' }}>
             Performance Overview
           </Box>
-          <Box sx={{ color: 'text.secondary', mb: 2, fontSize: '0.875rem' }}>
+          <Box sx={{ color: 'text.secondary', mb: 2, typography: 'body2' }}>
             System uptime and response metrics for the last 30 days
           </Box>
           <Box
@@ -441,15 +441,15 @@ export const FullExample: Story = {
       ).map((metric) => (
         <Grid key={metric.title} size={{ xs: 12, md: 4 }}>
           <Paper sx={{ p: 2 }} elevation={1}>
-            <Box sx={{ color: 'text.secondary', fontSize: '0.875rem' }}>
+            <Box sx={{ color: 'text.secondary', typography: 'body2' }}>
               {metric.title}
             </Box>
-            <Box sx={{ fontWeight: 700, fontSize: '1.5rem', my: 0.5 }}>
+            <Box sx={{ fontWeight: 700, typography: 'h5', my: 0.5 }}>
               {metric.value}
             </Box>
             <Box
               sx={{
-                fontSize: '0.75rem',
+                typography: 'caption',
                 color: 'text.secondary',
                 bgcolor: metric.color,
                 display: 'inline-block',
