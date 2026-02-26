@@ -34,6 +34,7 @@ module.exports = {
   extends: [
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
+    'plugin:storybook/recommended',
     'prettier',
   ],
 
@@ -101,6 +102,13 @@ module.exports = {
       'error',
       { allowInterfaces: 'with-single-extends', allowObjectTypes: 'always' },
     ],
+
+    // Disable the Storybook rule that enforces importing Meta/StoryObj from the
+    // framework package (@storybook/react-vite) rather than the renderer package
+    // (@storybook/react). AAP §0.8.2 explicitly specifies '@storybook/react' as
+    // the canonical import source for type imports, so this rule is disabled to
+    // resolve the conflict between the AAP convention and the plugin default.
+    'storybook/no-renderer-packages': 'off',
   },
 
   // Plugin-specific settings.
